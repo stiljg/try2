@@ -1,0 +1,8 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -t stiljg/node .
+  - docker images stiljg/node
+  
