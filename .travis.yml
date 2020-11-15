@@ -5,4 +5,13 @@ services:
 script:
   - docker build -t stiljg/node .
   - docker images stiljg/node
-  
+
+before_deploy:
+  - docker login -u stiljg -p Rethymn01
+
+deploy:
+  provider: script
+  script: docker push stiljg/node
+  on:
+    branch: master
+    
